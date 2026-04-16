@@ -1,3 +1,14 @@
+:root {
+  --color-text: #1a1a1a;
+  --color-muted: #666;
+  --color-border: #e5e5e5;
+  --color-link: #0070f3;
+  --color-bg: #fff;
+  --space-sm: 1rem;
+  --space-md: 2rem;
+  --max-width: 60rem;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -6,13 +17,13 @@ body {
   margin: 0;
   font-family: system-ui, sans-serif;
   line-height: 1.5;
-  color: #1a1a1a;
-  background: #fff;
+  color: var(--color-text);
+  background: var(--color-bg);
 }
 
 header {
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #e5e5e5;
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid var(--color-border);
 }
 
 header a {
@@ -22,14 +33,21 @@ header a {
 }
 
 main {
-  padding: 2rem;
-  max-width: 60rem;
+  padding: var(--space-md);
+  max-width: var(--max-width);
   margin-inline: auto;
 }
 
 footer {
-  padding: 1rem 2rem;
-  border-top: 1px solid #e5e5e5;
+  padding: var(--space-sm) var(--space-md);
+  border-top: 1px solid var(--color-border);
   font-size: 0.875rem;
-  color: #666;
+  color: var(--color-muted);
+}
+
+@media (min-width: 640px) {
+  header,
+  footer {
+    padding-inline: var(--space-md);
+  }
 }

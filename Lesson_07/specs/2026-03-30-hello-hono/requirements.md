@@ -6,12 +6,20 @@ Install and configure Hono with a `tsx` dev server. Expose a single `/` route th
 
 ## Out of Scope
 
-- No shared layout or navigation (Phase 2)
 - No test framework setup (Vitest deferred to a later phase)
 - No database or additional routes
 - No CI/CD pipeline
 
 ## Decisions
+
+### Layout component structure
+`src/components/Layout.tsx` owns the HTML shell (`<html>`, `<head>`, `<body>`) and composes the three structural subcomponents. Each subcomponent must live in its own file:
+
+- `src/components/Header.tsx` — renders `<header>`
+- `src/components/Main.tsx` — renders `<main>`, accepts `children`
+- `src/components/Footer.tsx` — renders `<footer>`
+
+No structural markup may be inlined directly in `Layout.tsx`; it delegates to these files. This keeps each piece independently readable and testable.
 
 ### Pin Hono version
 Record the exact Hono version in `package.json` with no range prefix (e.g., `"hono": "4.x.y"`). Future phases must not silently upgrade without deliberate review.

@@ -4,12 +4,12 @@ Phases are intentionally small — each one is a shippable slice of work, indepe
 
 ---
 
-## Phase 1 — Hello Hono ✅
+## Phase 1 — Hello Hono
 - Install and configure Hono with `tsx` dev server
 - Single `/` route returning "AgentClinic is open for business"
 - Confirm TypeScript types work end-to-end
 
-## Phase 2 — Base Layout ✅
+## Phase 2 — Base Layout
 - Server-side JSX layout component (header, nav, main, footer)
 - Basic CSS (custom properties, reset, typography)
 - All routes render inside the shared layout
@@ -41,10 +41,9 @@ Phases are intentionally small — each one is a shippable slice of work, indepe
 ## Phase 8 — Staff Dashboard
 - `/dashboard` with summary counts: agents, open appointments, ailments in-flight
 - Simple table views for staff to manage records
-- Mary's dashboard is now real
 
 ## Phase 9 — Polish & Accessibility
-- Responsive layout for Steve's modern-browser requirement
+- Responsive layout
 - Semantic HTML audit
 - Keyboard navigation and focus styles
 

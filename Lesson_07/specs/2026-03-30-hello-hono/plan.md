@@ -25,12 +25,14 @@
 
 ## Group 5 — Layout Component
 
-12. Create `src/components/Layout.tsx` with a top-level shell (`<html>`, `<head>`, `<body>`); it imports `<Header>`, `<Main>`, and `<Footer>` from their own files
-13. Create `src/components/Header.tsx`, `src/components/Main.tsx`, and `src/components/Footer.tsx` as separate files, one component each
-14. `<head>` links to `/static/style.css`
-15. Create `static/style.css` with minimal base styles
-16. Serve the `static/` directory via `@hono/node-server/serve-static` in `src/index.tsx`
-17. Update `src/pages/Home.tsx` to use `<Layout>` and place page content inside `<Main>`
+12. Create `src/components/Layout.tsx` — renders the full HTML shell (`<html>`, `<head>`, `<body>`); accepts `children` via `PropsWithChildren`; composes `<Header>`, `<Main>`, and `<Footer>` — children are passed into `<Main>`
+13. Create `src/components/Header.tsx` — renders `<header>` with a home link to `/`
+14. Create `src/components/Main.tsx` — renders `<main>` wrapping `children`
+15. Create `src/components/Footer.tsx` — renders `<footer>` with a copyright line
+16. `<head>` in `Layout` includes `<meta name="viewport">` and `<link rel="stylesheet" href="/static/style.css">`
+17. Create `static/style.css` with CSS custom properties for color/spacing tokens, base element resets, and `min-width` media queries for larger viewports
+18. Serve `static/` via `@hono/node-server/serve-static` in `src/index.tsx`
+19. Update `src/pages/Home.tsx` to use `<Layout>` — pass page content as children directly (do not re-wrap in `<Main>`)
 
 ## Group 6 — Verify
 
